@@ -25,33 +25,9 @@ const OtherCollapse = ({ name }) => {
                                     expandIconPosition={"right"} >
                                     <Panel header={`This is Bidder header ${key + 1}`} key={key + 1}>
 
-
                                         <Col span={24} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }} >
-                                            <CustomInput>
-                                                <Field {...restField} name={[name, "fName"]}>
-                                                    <Input />
-                                                </Field>
-                                            </CustomInput>
 
-
-                                            <CustomInput>
-                                                <Field {...restField} name={[name, "lName"]}>
-                                                    <Input />
-                                                </Field>
-                                            </CustomInput>
-
-
-                                            <CustomInput>
-                                                <Field {...restField} name={[name, "anotherFname"]}>
-                                                    <Input />
-                                                </Field>
-                                            </CustomInput>
-
-                                            <CustomInput>
-                                                <Field {...restField} name={[name, "anotherLName"]}>
-                                                    <Input />
-                                                </Field>
-                                            </CustomInput>
+                                            <CustomInput name={name} {...restField} />
 
 
                                             {key > 0 &&

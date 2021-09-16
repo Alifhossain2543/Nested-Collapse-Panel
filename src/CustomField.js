@@ -1,13 +1,15 @@
-import { Form, Input } from 'antd'
-import CustomInput from './CustomInput'
+import { Form, Input, Col } from 'antd'
 
 
-const CustomField = ({ name }) => {
+const CustomField = ({ fieldname, key, name, fieldKey, ...restField }) => {
     const { Item } = Form
     return (
-        <Item name={[name, "fName"]} >
-            <CustomInput />
-        </Item>
+        <Col xs={12} md={8} lg={6}>
+            <Item {...restField} name={[name, fieldname]}>
+                <Input />
+            </Item>
+        </Col>
+
     )
 }
 

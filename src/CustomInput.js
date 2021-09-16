@@ -1,12 +1,23 @@
-import { Col, Form } from 'antd'
+import { Col, Form, Input } from 'antd'
+import CustomField from './CustomField'
 
-const CustomInput = ({ children }) => {
+const CustomInput = ({ key, name, fieldKey, ...restField }) => {
+    const { Item } = Form
 
     return (
-        <Col xs={12} md={8} lg={6}>
-            {children}
+        <>
 
-        </Col>
+            <CustomField name={name} {...restField} fieldname="fName" />
+
+            <CustomField name={name} {...restField} fieldname="lName" />
+
+            <CustomField name={name} {...restField} fieldname="anotherFname" />
+
+            <CustomField name={name} {...restField} fieldname="anotherLName" />
+
+
+        </>
+
     )
 }
 
