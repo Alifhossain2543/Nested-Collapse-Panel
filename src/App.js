@@ -18,8 +18,13 @@ function App() {
 
   return (
     <>
+      <Collapse
+        destroyInactivePanel>
 
-      <Form form={form} name="form" onFinish={formValueHandler} initialValues={{ infoList: [""] }} >
+        <Panel header="everything" key="1">
+
+
+          <Form form={form} name="form" onFinish={formValueHandler} initialValues={{ infoList: [""] }} >
         <List name="infoList" >
 
           {(fields, { add, remove }) => (
@@ -29,10 +34,11 @@ function App() {
               {fields.map(({ key, name, fieldKey, ...restField }) => (
                 <Item {...restField} key={key} >
                   <Collapse
+                    destroyInactivePanel
                     defaultActiveKey={1} expandIconPosition="right" >
                     <Panel header={`This is panel header ${key + 1}`} key={key + 1}>
 
-                      <Col span={24} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between" }} >
+                      <Col span={24} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }} >
                         <Col xs={12} md={8} lg={6}>
                           <Item {...restField} name={[name, "fName"]}  >
                             <Input />
@@ -78,7 +84,8 @@ function App() {
 
         <Button htmlType="submit" >Submit</Button>
       </Form>
-
+        </Panel>
+      </Collapse>
     </>
   );
 }
