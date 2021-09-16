@@ -1,10 +1,11 @@
-import { Col, Input } from 'antd'
+import { Col, Form } from 'antd'
 
-const CustomInput = () => {
+const CustomInput = ({ children }) => {
 
     return (
         <Col xs={12} md={8} lg={6}>
-            <Input />
+            {children}
+
         </Col>
     )
 }

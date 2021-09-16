@@ -1,5 +1,7 @@
 import { Collapse, Input, Form, Col, Button } from 'antd'
 import { DeleteOutlined } from '@ant-design/icons'
+import CustomInput from './CustomInput'
+import { Field } from 'rc-field-form'
 
 
 const OtherCollapse = ({ name }) => {
@@ -23,30 +25,35 @@ const OtherCollapse = ({ name }) => {
                                     expandIconPosition={"right"} >
                                     <Panel header={`This is Bidder header ${key + 1}`} key={key + 1}>
 
+
                                         <Col span={24} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }} >
-                                            <Col xs={12} md={8} lg={6}>
-                                                <Item {...restField} name={[name, "fName"]}  >
+                                            <CustomInput>
+                                                <Field {...restField} name={[name, "fName"]}>
                                                     <Input />
-                                                </Item>
-                                            </Col>
+                                                </Field>
+                                            </CustomInput>
 
-                                            <Col xs={12} md={8} lg={6}>
-                                                <Item {...restField} name={[name, "lname"]}  >
-                                                    <Input />
-                                                </Item>
-                                            </Col>
 
-                                            <Col xs={12} md={8} lg={6}>
-                                                <Item {...restField} name={[name, "anotherFname"]}  >
+                                            <CustomInput>
+                                                <Field {...restField} name={[name, "lName"]}>
                                                     <Input />
-                                                </Item>
-                                            </Col>
+                                                </Field>
+                                            </CustomInput>
 
-                                            <Col xs={12} md={8} lg={6}>
-                                                <Item {...restField} name={[name, "anotherLName"]}  >
+
+                                            <CustomInput>
+                                                <Field {...restField} name={[name, "anotherFname"]}>
                                                     <Input />
-                                                </Item>
-                                            </Col>
+                                                </Field>
+                                            </CustomInput>
+
+                                            <CustomInput>
+                                                <Field {...restField} name={[name, "anotherLName"]}>
+                                                    <Input />
+                                                </Field>
+                                            </CustomInput>
+
+
                                             {key > 0 &&
                                                 <DeleteOutlined onClick={(e) => { e.stopPropagation(); remove(name) }} />
                                             }
