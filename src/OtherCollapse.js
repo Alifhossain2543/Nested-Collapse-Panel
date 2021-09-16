@@ -6,14 +6,7 @@ const OtherCollapse = ({ name }) => {
     const { Item, List } = Form
     const { Panel } = Collapse
 
-    const genExtra = () => (
-        <DeleteOutlined
-            onClick={event => {
-                // If you don't want click extra trigger collapse, you can prevent this:
-                event.stopPropagation();
-            }}
-        />
-    );
+
 
 
     return (
@@ -28,7 +21,7 @@ const OtherCollapse = ({ name }) => {
                             <Item {...restField} key={key} >
                                 <Collapse destroyInactivePanel
                                     expandIconPosition={"right"} >
-                                    <Panel header={`This is Bidder header ${key + 1}`} key={key + 1} extra={genExtra()}>
+                                    <Panel header={`This is Bidder header ${key + 1}`} key={key + 1}>
 
                                         <Col span={24} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }} >
                                             <Col xs={12} md={8} lg={6}>
@@ -54,8 +47,9 @@ const OtherCollapse = ({ name }) => {
                                                     <Input />
                                                 </Item>
                                             </Col>
-                                            <DeleteOutlined onClick={(e) => { e.stopPropagation(); remove(name) }} />
-
+                                            {key > 0 &&
+                                                <DeleteOutlined onClick={(e) => { e.stopPropagation(); remove(name) }} />
+                                            }
                                         </Col>
                                     </Panel>
                                 </Collapse>

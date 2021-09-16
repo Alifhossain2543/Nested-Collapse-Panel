@@ -63,18 +63,19 @@ function App() {
                           </Item>
                         </Col>
 
-                        <Col span={24} >
-                          <OtherCollapse name={name} />
-                        </Col>
-
-
-                        <DeleteOutlined onClick={(e) => { e.stopPropagation(); remove(name) }} />
+                        {key > 0 &&
+                          <DeleteOutlined onClick={(e) => { e.stopPropagation(); remove(name) }} />
+                        }
+                      </Col>
+                      <Col span={24} >
+                        <OtherCollapse name={name} />
                       </Col>
                     </Panel>
                   </Collapse>
 
                 </Item>
               ))}
+
               <Button onClick={() => add()} > Add </Button>
 
             </>
