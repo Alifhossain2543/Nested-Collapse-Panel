@@ -1,7 +1,8 @@
 import './App.css';
-import { Collapse, Input, Form, Col, Button, Row } from 'antd'
+import { Collapse, Input, Form, Col, Button } from 'antd'
 import { DeleteOutlined } from '@ant-design/icons'
 import OtherCollapse from './OtherCollapse';
+import UploadFiles from './UploadFiles'
 
 function App() {
   const [form] = Form.useForm()
@@ -12,9 +13,6 @@ function App() {
     console.log(values)
   }
 
-  const panelChangeHandler = (key) => {
-    console.log(key)
-  }
 
   return (
     <>
@@ -87,6 +85,8 @@ function App() {
       </Form>
         </Panel>
       </Collapse>
+
+      <UploadFiles />
     </>
   );
 }
